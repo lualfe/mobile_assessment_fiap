@@ -142,38 +142,32 @@ class _MeasurementsState extends State<Measurements> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text("Body Measurements"),
-      ),
-      body: Stack(
-        children: [
-          Container(
-            clipBehavior: Clip.hardEdge,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("images/Body.jpeg"),
-                fit: BoxFit.fitHeight,
-              ),
+    return Stack(
+      children: [
+        Container(
+          clipBehavior: Clip.hardEdge,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/Body.jpeg"),
+              fit: BoxFit.fitHeight,
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(left: 5, top: 50),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: getColumn(leftColumn()),
-            ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 5, top: 50),
+          child: Align(
+            alignment: Alignment.topLeft,
+            child: getColumn(leftColumn()),
           ),
-          Container(
-            margin: const EdgeInsets.only(right: 5, top: 50),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: getColumn(rightColumn()),
-            ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(right: 5, top: 50),
+          child: Align(
+            alignment: Alignment.topRight,
+            child: getColumn(rightColumn()),
           ),
-        ],
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        ),
+      ],
     );
   }
 }

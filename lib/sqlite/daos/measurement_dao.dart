@@ -32,4 +32,17 @@ class MeasurementDAO {
     Database db = await getDatabase();
     return db.insert('measurements', measurement.toMap());
   }
+
+  Future<List<Measurement>> readMeasurementsFromPart(String part) async {
+    Database db = await getDatabase();
+    final List<Map<String, dynamic>> maps = await db.query('measurements',
+        where: "bodyPart = ?", whereArgs: [part], orderBy: "updatedAt asc");
+
+    List<Measurement> result = List.generate(maps.length, (i) {
+      return Measurement(maps[i]['id'], maps[i]['bodyPart'], maps[i]['value'],
+          maps[i]['updatedAt']);
+    });
+
+    return result;
+  }
 }

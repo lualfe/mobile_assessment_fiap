@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_project/screens/measurements.dart';
+import 'package:mobile_project/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,12 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Body Measurements',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
-      initialRoute: "/",
-      routes: {
-        "/": (context) => const Measurements(),
-      },
+      home: const Home(),
     );
   }
 }

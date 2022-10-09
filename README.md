@@ -1,6 +1,7 @@
-# mobile_project
+# Body Measurement App
 
-A new Flutter project.
+This app allows users to record their body measurements: weight, neck, shoulder, biceps, forearms,
+waist, hips, thighs and calfs.
 
 ## Getting Started
 
